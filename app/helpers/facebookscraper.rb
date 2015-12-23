@@ -39,6 +39,6 @@ module Facebookscraper
     
     def self.sendReport
         addedCount = Question.where('created_at >= ?', 1.day.ago).count
-        QuestionMailer.report(Rails.application.secrets.adminemail,addedCount)
+        QuestionMailer.report(Rails.application.secrets.adminemail,addedCount).deliver
     end
 end
