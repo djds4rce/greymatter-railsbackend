@@ -24,7 +24,7 @@ module Workspace
     config.active_record.raise_in_transactional_callbacks = true
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
-        origins 'http://localhost:9000', 'http://run.plnkr.co'
+        origins 'http://localhost:3000', 'http://run.plnkr.co','http://greymatter.parseapp.com/'
         resource '*', :headers => :any, :methods => [:get, :post, :options,:put,:delete]
       end
     end
