@@ -18,7 +18,7 @@ module Facebookscraper
     def self.geturl opts
         #move this to configuration
         token = Rails.application.secrets.facebookkey
-        URI(opts[:url] || "https://graph.facebook.com/v2.3/141573075895262/feed?fields=comments,full_picture,message,name,caption,description,link,from,type,object_id&access_token=#{token}")
+        URI(opts[:url] || "https://graph.facebook.com/v2.5/141573075895262/feed?fields=comments,full_picture,message,name,caption,description,link,from,type,object_id&access_token=#{token}")
     end
     
     def self.processData(datamap)
