@@ -2,13 +2,13 @@ class QuestionsController < ApplicationController
     before_action :set_question, only: [:show, :update, :destroy]
     
      acts_as_token_authentication_handler_for User, fallback_to_devise: false
-     before_filter :authenticate_user!, except: [:random,:show,:question_list]
+     before_filter :authenticate_user!, except: [:random,:show,:ql]
     
     
     def new
     end
     
-    def question_list 
+    def ql 
       questions = Question.where('answer is NULL AND flag is NULL').limit(10)
       respond_to do |format|
         format.json {
